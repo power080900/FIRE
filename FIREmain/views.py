@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import datetime
 
 # Create your views here.
 
@@ -17,8 +18,13 @@ def calculator(request):
     return render(request, 'calculator.html', context)
 
 def financialledger(request):
-    num = 1
+    i = datetime.date.today().month
+    j = list(range(1, 13))
+    k = request.GET.get("monthly")
+    print(k)
     context = {
-        'num':num
+        'i': i,
+        'j': j,
+        'k': k
     }
     return render(request, 'financialledger.html', context)

@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>financialleger</title>
 </head>
 <body>
-
+    <a href="/FIREmain/financialledger/?month={{i}}">입력하기</a>
+    <form method="get" action="" class="form" style="margin-left: 7%; margin-top: 5%;">
+        <select name="montly" id="id_month">
+            <option value="0" selected>월 선택</option>
+            <option value="01">1월</option>
+            <option value="02">2월</option>
+            <option value="03">3월</option>
+            <option value="04">4월</option>
+            <option value="05">5월</option>
+            <option value="06">6월</option>
+            <option value="07">7월</option>
+            <option value="08">8월</option>
+            <option value="09">9월</option>
+            <option value="10">10월</option>
+            <option value="11">11월</option>
+            <option value="12">12월</option>
+        </select>
+    </form>
+        <a href="/FIREmain/financialledger/?month={{k}}">보러가기</a>
 </body>
+<script>
+    $(document).ready(function() {
+        $( "select[name=monthly]" ).val( "{{ monthly_text }}" );
+        $('select[name=monthly]').change(function () {
+        console.log($('select[name=monthly]').val());
+        month = $('select[name=monthly]').val();
+        $('.form').submit();
+    });
+});
+</script>
 </html>
