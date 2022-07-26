@@ -5,9 +5,9 @@
     <title>financialleger</title>
 </head>
 <body>
-    <a href="/FIREmain/financialledger/?month={{i}}">입력하기</a>
-    <form method="get" action="" class="form" style="margin-left: 7%; margin-top: 5%;">
-        <select name="montly" id="id_month">
+    <a href="/FIREmain/financialledger/?monthly={{i}}">입력하기</a>
+    <form method="get" action="" class="form">
+        <select name="month" id="id_month">
             <option value="0" selected>월 선택</option>
             <option value="01">1월</option>
             <option value="02">2월</option>
@@ -23,14 +23,14 @@
             <option value="12">12월</option>
         </select>
     </form>
-        <a href="/FIREmain/financialledger/?month={{k}}">보러가기</a>
+        <a href="/FIREmain/financialledger/?monthly={{k}}">보러가기</a>
 </body>
 <script>
     $(document).ready(function() {
-        $( "select[name=monthly]" ).val( "{{ monthly_text }}" );
-        $('select[name=monthly]').change(function () {
-        console.log($('select[name=monthly]').val());
-        month = $('select[name=monthly]').val();
+        $( "select[name=month]" ).val( "{{ month_text }}" );
+        $('select[name=month]').change(function () {
+        console.log($('select[name=month]').val());
+        month = $('select[name=month]').val();
         $('.form').submit();
     });
 });

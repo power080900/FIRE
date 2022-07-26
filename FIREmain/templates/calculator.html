@@ -5,33 +5,45 @@
     <title>calculator</title>
 </head>
 <body>
-    <h1><input id="liveage" type="text">세 은퇴자금 계산기</h1>
-    <table>
-        <tr>
-            <td>저축금액</td>
-            <td><input id="save" type="text"></td>
-            <td>원</td>
-        </tr>
-        <tr>
-            <td>수익률</td>
-            <td><input id="profit" type="text"></td>
-            <td>%</td>
-        </tr>
-        <tr>
-            <td>은퇴시기</td>
-            <td><input id="retire" type="text"></td>
-            <td>세</td>
-        </tr>
-        <tr>
-            <td>예상금액</td>
-            <td><input id="prediction" type="text"></td>
-            <td>원</td>
-        </tr>
-        <tr>
-            <td>목표금액</td>
-            <td><input id="goal" type="text"></td>
-            <td>원</td>
-        </tr>
-    </table>
+    <form action="result/" method="GET">
+        <h1><input name="liveage" type="text">세 인생 은퇴자금 계산기</h1>
+        <h3>알고싶은 값을 비우고 계산하세요</h3>
+        <table>
+            <tr>
+                <td>저축금액</td>
+                <label for="save"></label>
+                <td><input name="save" type="text"></td>
+                <td>원</td>
+            </tr>
+            <tr>
+                <td>은퇴 후 사용금액</td>
+                <label for="use"></label>
+                <td><input name="use" type="text"></td>
+                <td>원</td>
+            </tr>
+            <tr>
+                <td>수익률</td>
+                <label for="profit"></label>
+                <td><input name="profit" type="text"></td>
+                <td>%</td>
+            </tr>
+            <tr>
+                <td>은퇴시기</td>
+                <label for="retire"></label>
+                <td><input name="retire" type="text"></td>
+                <td>세</td>
+            </tr>
+            <tr>
+                <td>목표금액</td>
+                <label for="goal"></label>
+                <td><input name="goal" type="text"></td>
+                <td>원</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="계산하기"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

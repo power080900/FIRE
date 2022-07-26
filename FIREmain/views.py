@@ -11,16 +11,16 @@ def main(request):
     return render(request, 'main.html', context)
 
 def calculator(request):
-    num = 1
+    i = 1
     context = {
-        'num':num
+        'i': i
     }
     return render(request, 'calculator.html', context)
 
 def financialledger(request):
     i = datetime.date.today().month
     j = list(range(1, 13))
-    k = request.GET.get("monthly")
+    k = request.GET.get("month")
     print(k)
     context = {
         'i': i,
@@ -28,3 +28,20 @@ def financialledger(request):
         'k': k
     }
     return render(request, 'financialledger.html', context)
+
+def result(request):
+    liveage = request.GET.get('liveage')
+    save = request.GET.get('save')
+    use = request.GET.get('use')
+    profit = request.GET.get('profit')
+    retire = request.GET.get('retire')
+    goal = request.GET.get('goal')
+    context = {
+        'liveage': liveage,
+        'save': save,
+        'use': use,
+        'profit': profit,
+        'retire': retire,
+        'goal': goal
+    }
+    return render(request, 'result.html', context)
