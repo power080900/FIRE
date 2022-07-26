@@ -36,15 +36,12 @@ def result(request):
     profit = request.GET.get('profit')
     retire = request.GET.get('retire')
     goal = request.GET.get('goal')
-    if profit is not None:
-        print("있는 값")
-        print(profit)
+    if profit is "":
+        case = 1
+        result = 1
+
     context = {
-        'liveage': liveage,
-        'save': save,
-        'use': use,
-        'profit': profit,
-        'retire': retire,
-        'goal': goal
+        'case': case,
+        'result': result
     }
     return render(request, 'result.html', context)

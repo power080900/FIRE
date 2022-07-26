@@ -5,12 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    당신의
-    {{liveage}}
-    {{use}}
-    {{save}}
-    {{profit}}
-    {{retire}}
-    {{goal}}
+    {% if case == 1 %}
+    당신의 은퇴자금은 {{result}}입니다
+    {% endif %}
 </body>
 </html>
