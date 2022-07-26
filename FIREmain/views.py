@@ -36,6 +36,9 @@ def result(request):
     profit = request.GET.get('profit')
     retire = request.GET.get('retire')
     goal = request.GET.get('goal')
+    if profit is not None:
+        print("있는 값")
+        print(profit)
     context = {
         'liveage': liveage,
         'save': save,
