@@ -31,15 +31,30 @@ def financialledger(request):
 
 def result(request):
     liveage = request.GET.get('liveage')
+    age = request.GET.get('age')
     save = request.GET.get('save')
     use = request.GET.get('use')
     profit = request.GET.get('profit')
     retire = request.GET.get('retire')
     goal = request.GET.get('goal')
-    if profit is "":
+    if liveage is "":
         case = 1
         result = 1
-
+    elif save is "":
+        case = 2
+        result = 2
+    elif use is "":
+        case = 3
+        result = 3
+    elif profit is "":
+        case = 4
+        result = 4
+    elif retire is "":
+        case = 5
+        result = 5
+    elif goal is "":
+        case = 6
+        result = 6
     context = {
         'case': case,
         'result': result
